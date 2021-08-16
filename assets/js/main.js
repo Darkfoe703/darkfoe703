@@ -48,7 +48,7 @@ var btContact = document.getElementById("btContact");
 btContact.addEventListener("click", ctContact);
 
 let url = document.location.href;
-console.log(url);
+//console.log(url);
 if (url.includes("#portfolio")) {
   ctPortfolio();
 } else if (url.includes("#contact")) {

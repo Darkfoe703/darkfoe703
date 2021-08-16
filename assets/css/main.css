@@ -745,10 +745,51 @@ a {
   color: #FFF;
 }
 /* ============================================================
+                      CONTACT
+============================================================= */
+.experience .contact-social {
+  display: flex;
+  direction: ltr;
+  width: 50%;
+}
+.experience .contact-social .fa-social:hover {
+  color: var(--font-main);
+}
+/* ============================================================
                    FORM CONTACT
 ============================================================= */
 .contact-form {
-  
+  display: grid;
+  justify-content: center;
+  margin: auto;
+  margin-top: 10%;
+  width: 50%;
+  padding: 2rem;
+}
+.form-item {
+  width: 100%;
+  margin: .4rem;
+  padding: 4px;
+}
+.form-item:focus {
+  outline: 1px solid;
+  outline-color: var(--color-main);
+}
+.form-btn {
+  width: 50%;
+  margin: .4rem;
+  padding: 1em .5em;
+  border: none;
+  border-radius: 3px;
+  background-color: var(--color-main);
+  transition: .4s;
+}
+.form-btn:focus {
+    outline: 1px solid;
+    outline-color: var(--font-main);
+}
+.form-btn:hover {
+    background-color: var(--font-main);
 }
 /* =========== FOOTER ============== */
 .footer {
@@ -758,7 +799,10 @@ a {
   padding-bottom: 0px;
   margin: 0px auto;
 }
-
+.contact-form form textarea {
+  min-height: 10em;
+  resize: vertical;
+}
 /*=========================
   * GRID *
 =========================*/

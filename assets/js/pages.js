@@ -138,6 +138,25 @@ var pagePortfolio = `<div class="container">
     </div>
   </div>
 </div>`;
-var pageContact = ``;
+var pageContact = `<div class="container">
+  <h3 class="experience-title">CONTANCTO</h3>
+  <div class="contact-social">
+    <a class="fa-social" href="" target="_blank"><i class="fab fa-telegram"></i></a>
+    <a class="fa-social" href="https://www.linkedin.com/in/marco-romero-at/" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a class="fa-social" href="https://github.com/Darkfoe703" target="_blank"><i class="fab fa-github-square"></i></a>
+    <a class="fa-social" href="https://instagram.com/Darkfoe703" target="_blank"><i class="fab fa-instagram-square"></i></a>
+  </div>
+  <hr>
+  <div class="contact-form col-1 med-col-1 sm-col-1">
+    <form action="submit">
+      <input class="form-item" type="text" name="name" value="" placeholder="Name"></input>
+      <input class="form-item" type="text" name="email" value="" placeholder="Email"></input>
+      <textarea class="form-item" type="text" name="message" value="" placeholder="Message..."></textarea>
+      <button id="send-btn" class="form-item form-btn" type="button" name="send-btn" onclick="test()">Enviar</button>
+    </form>
+  </div>
+</section>
+
+</div>`;
 
 //console.log(pagePortfolio);
