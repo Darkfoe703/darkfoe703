@@ -141,7 +141,7 @@ var pagePortfolio = `<div class="container">
 var pageContact = `<div class="container">
   <h3 class="experience-title">CONTANCTO</h3>
   <div class="contact-social">
-    <a class="fa-social" href="" target="_blank"><i class="fab fa-telegram"></i></a>
+    <a class="fa-social" href="https://t.me/Darkfoe703" target="_blank"><i class="fab fa-telegram"></i></a>
     <a class="fa-social" href="https://www.linkedin.com/in/marco-romero-at/" target="_blank"><i class="fab fa-linkedin"></i></a>
     <a class="fa-social" href="https://github.com/Darkfoe703" target="_blank"><i class="fab fa-github-square"></i></a>
     <a class="fa-social" href="https://instagram.com/Darkfoe703" target="_blank"><i class="fab fa-instagram-square"></i></a>
