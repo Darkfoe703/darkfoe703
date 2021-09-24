@@ -1,0 +1,18 @@
+### Jekyll ###
+_site
+.jekyll-metadata
+*-cache/
+
+### NPM ###
+/node_modules/
+
+
+### Atom ###
+.ftpconfig
+.sftpconfig
+
+### Linux ###
+*~
+.fuse_hidden*
+.Trash-*
+.nfs*
