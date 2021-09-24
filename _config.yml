@@ -31,7 +31,7 @@ twitter_username: darkfoe703
 github_username: darkfoe703
 
 # Build settings
-theme: minima
+theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
 
