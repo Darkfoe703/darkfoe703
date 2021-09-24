@@ -1,69 +1,10 @@
-<!DOCTYPE html>
-<html lang="es" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Marco Romero | Desarrollador Web | Python</title>
-    <meta name="description" content="Marco Romero Desarrollador Web Full Stack, con HTML5 CSS JavaScript Python y Django - FrontEnd y BackEnd">
-    <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-  </head>
-  <body>
-    <header>
-      <div class="sidebar bar-block card sidebar-init sidebar-hide animate-right" id="mySidebar">
-        <button id="cbutton" class="bar-item button large">Cerrar <i class="far fa-times-circle"></i></button>
-        <a href="#home"  id="btHome"class="bar-item button"><i class="fas fa-home"></i> Inicio</a>
-        <a href="#portfolio" id="btPortfolio" class="bar-item button"><i class="fas fa-suitcase"></i> Portfolio</a>
-        <!--a href="#" class="bar-item button"><i class="fas fa-user"></i> Curriculum Vitae</a-->
-        <a href="#contact" id="btContact" class="bar-item button"><i class="fas fa-phone-alt"></i> Contacto</a>
-      </div>
-      <div class="burguer-bar">
-        <button id="bbutton" class="button xlarge"><i class="fas fa-bars"></i></button>
-      </div>
-    </header>
-    <div class="resume-wrapper">
-      <section class="profile section-padding">
-        <div class="container">
-          <div class="picture-resume-wrapper">
-            <div class="picture-resume">
-              <span><img src="assets/images/perfil01.jpg" alt="" ></span>
-            </div>
-            <div class="clearfix"></div>
-          </div>
-          <div class="name-wrapper">
-            <h1>Marco <br />Romero</h1>
-          </div>
-          <div class="clearfix"></div>
-          <div class="contact-presentation">
-            <!-- YOUR PRESENTATION RESUME  -->
-            <p><span class="bold">Soy</span> un desarrollador autodidacta, con varias habilidades en el área técnica, tanto electrónica como informática, las cuales he complementado con capacitación pedagógica y en comunicación. </p>
-            <p>El continuo desarrollo y aprendizaje, en el área BackEnd y la educación, son mis marcas distintivas.</p>
-          </div>
-          <div class="contact-info clearfix">
-            <ul class="list-titles">
-              <li><i class="fas fa-user"> </i> Nombre</li>
-              <li><i class="fas fa-mobile-alt"> </i> Celular</li>
-              <li><i class="fas fa-at"> </i> e-mail</li>
-              <li><i class="fas fa-globe"> </i> Web</li>
-              <li><i class="fas fa-map-marker-alt"> </i> Ubicación</li>
-            </ul>
-            <ul class="list-content ">
-              <li>Marco Antonio Romero Torrez</li>
-              <li>+54 280 484 2576</li>
-              <li><a href="mailto:marcoromero_1@hotmail.com">marcoromero_1@hotmail.com</a></li>
-              <li><a href="">marcoromero.com.ar</a></li>
-              <li>Puerto Madryn, Chubut - Argentina</li>
-            </ul>
-          </div>
-          <!--div class="clearfix"></div-->
-          <div class="contact-social clearfix">
-            <a class="fa-social" href="https://www.linkedin.com/in/marco-romero-at/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a class="fa-social" href="https://github.com/Darkfoe703" target="_blank"><i class="fab fa-github-square"></i></a>
-            <a class="fa-social" href="https://instagram.com/Darkfoe703" target="_blank"><i class="fab fa-instagram-square"></i></a>
-          </div>
-        </div>
-      </section>
+---
+layout: page
+permalink: :basename
+---
 
+
+    <div class="flex-content">
       <section class="experience section-padding">
         <div class="container">
           <h3 class="experience-title">CONTANCTO</h3>
@@ -76,23 +17,13 @@
           <hr>
           <div class="contact-form col-1 med-col-1 sm-col-1">
             <form action="submit">
-              <input class="form-item" type="text" name="name" value="" placeholder="Name"></input>
+              <input class="form-item" type="text" name="name" value="" placeholder="Nombre"></input>
               <input class="form-item" type="text" name="email" value="" placeholder="Email"></input>
-              <textarea class="form-item" type="text" name="message" value="" placeholder="Message..."></textarea>
+              <textarea class="form-item" type="text" name="message" value="" placeholder="Mensaje..."></textarea>
               <button id="send-btn" class="form-item form-btn" type="button" name="send-btn" onclick="test()">Enviar</button>
             </form>
           </div>
       </section>
-      <div class="clearfix span-bar"></div>
-      <div class="footer clearfix">
-        <a href="https://mariosmaselli.com/">Diseño base de Mario Maselli</a>
-        <!-- https://codepen.io/mariosmaselli/details/CDcmb -->
-      </div>
 
+      {%- include profile.html -%}
     </div>
-    <!-- FontAwesome -->
-    <script src="https://kit.fontawesome.com/7b4b46f24e.js" crossorigin="anonymous"></script>
-    <script src="assets/js/main.js"></script>
-
-  </body>
-</html>
