@@ -6,7 +6,6 @@ _site
 ### NPM ###
 /node_modules/
 
-
 ### Atom ###
 .ftpconfig
 .sftpconfig
@@ -16,3 +15,6 @@ _site
 .fuse_hidden*
 .Trash-*
 .nfs*
+
+### Others ###
+CNAME
