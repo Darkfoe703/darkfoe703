@@ -31,6 +31,8 @@ lang: es
 twitter_username: darkfoe703
 github_username: darkfoe703
 
+google_analytics: G-Y73T532172
+
 # Build settings
 theme: minima
 plugins:
