@@ -75,7 +75,8 @@ social:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
- exclude:
+exclude:
+  - README.md
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
@@ -86,5 +87,5 @@ social:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-    - README.md
+
 page_excerpts: true
