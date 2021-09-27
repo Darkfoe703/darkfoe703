@@ -24,8 +24,8 @@ email: marcoromero_1@hotmail.com
 tagline: Desarrollador Web Full Stack y Docente
 description: >- # this means to ignore newlines until "baseurl:"
   Desarrollador Web Full Stack, con HTML5 CSS JavaScript Python y Django - FrontEnd y BackEnd.
-baseurl: "/darkfoe703" # the subpath of your site, e.g. /blog
-url: "https://darkfoe703.github.io/darkfoe703" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://marcoromero.com.ar" # the base hostname & protocol for your site, e.g. http://example.com
 locale: es_AR
 lang: es
 twitter_username: darkfoe703
