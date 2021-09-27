@@ -4,9 +4,7 @@
 :root {
   --bg-main: rgba(61, 62, 66, 1);
   --bg-profile: rgba(255, 255, 255, 1);
-  /*--color-main: rgba(102, 204, 153, 1);*/
   --color-main: rgba(23, 162, 184, 1);
-  /*--color-main: rgba(28, 200, 227, 1);*/
   --font-main: rgba(144, 153, 160, 1);
   --font-profile: rgba(128, 139, 147, 1);
   --font-bold: rgba(74, 78, 81, 1);
@@ -667,6 +665,10 @@ a {
   height: 100%;
   overflow: hidden;
 }
+.card-img {
+  max-width: 440px;
+  max-height: 300px;
+}
 .card-p:hover {
   transform: translateY(10px);
 }
@@ -809,6 +811,7 @@ a {
   font-size: 8px;
   padding-bottom: 0px;
   margin: 0px auto;
+  color: var(--font-main);
 }
 .contact-form form textarea {
   min-height: 10em;

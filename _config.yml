@@ -19,14 +19,15 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Marco Romero
-author: Marco
+author: Marco Antonio Romero
 email: marcoromero_1@hotmail.com
+tagline: Desarrollador Web Full Stack y Docente
 description: >- # this means to ignore newlines until "baseurl:"
-  DADADADADWrite an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Desarrollador Web Full Stack, con HTML5 CSS JavaScript Python y Django - FrontEnd y BackEnd.
 baseurl: "/darkfoe703" # the subpath of your site, e.g. /blog
 url: "https://darkfoe703.github.io/darkfoe703" # the base hostname & protocol for your site, e.g. http://example.com
+locale: es_AR
+lang: es
 twitter_username: darkfoe703
 github_username: darkfoe703
 
@@ -34,7 +35,38 @@ github_username: darkfoe703
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
+logo: /assets/images/perfil00.jpg
+
+image:
+  path: /assets/images/perfil00.jpg
+  height: 256
+  width: 256
+
+social:
+  name: Marco Romero
+  links:
+    - https://twitter.com/Darkfoe703
+    - https://www.instagram.com/darkfoe703
+    - https://www.linkedin.com/in/marco-romero-at/
+    - https://github.com/darkfoe703
+
+logo: /assets/images/perfil00.jpg
+
+image:
+  path: /assets/images/perfil00.jpg
+  height: 256
+  width: 256
+
+social:
+  name: Marco Romero
+  links:
+    - https://twitter.com/Darkfoe703
+    - https://www.instagram.com/darkfoe703
+    - https://www.linkedin.com/in/marco-romero-at/
+    - https://github.com/darkfoe703
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
@@ -43,7 +75,7 @@ plugins:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
-# exclude:
+ exclude:
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
@@ -54,4 +86,5 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+    - README.md
 page_excerpts: true
