@@ -1,0 +1,30 @@
+---
+lang: es
+layout: default
+title: Contacto
+slug: contact
+---
+
+    <div class="flex-content">
+      <section class="experience section-padding">
+        <div class="container">
+          <h3 class="experience-title">CONTANCTO</h3>
+          <div class="contact-social">
+            <a class="fa-social" href="https://t.me/Darkfoe703" target="_blank"><i class="fab fa-telegram"></i></a>
+            <a class="fa-social" href="https://www.linkedin.com/in/marco-romero-at/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a class="fa-social" href="https://github.com/Darkfoe703" target="_blank"><i class="fab fa-github-square"></i></a>
+            <a class="fa-social" href="https://instagram.com/Darkfoe703" target="_blank"><i class="fab fa-instagram-square"></i></a>
+          </div>
+          <hr>
+          <div class="contact-form col-1 med-col-1 sm-col-1">
+            <form action="submit">
+              <input class="form-item" type="text" name="name" value="" placeholder="Nombre"></input>
+              <input class="form-item" type="text" name="email" value="" placeholder="Email"></input>
+              <textarea class="form-item" type="text" name="message" value="" placeholder="Mensaje..."></textarea>
+              <button id="send-btn" class="form-item form-btn" type="button" name="send-btn" onclick="test()">Enviar</button>
+            </form>
+          </div>
+      </section>
+
+      {%- include es_profile.html -%}
+    </div>
