@@ -1,13 +1,26 @@
 <header>
-  <div class="sidebar bar-block card sidebar-init sidebar-hide animate-right" id="mySidebar">
-    <button id="cbutton" class="bar-item button large">Cerrar <i class="far fa-times-circle"></i></button>
-    <a href="{{ site.url }}/" id="btHome" class="bar-item button"><i class="fas fa-user"></i> Inicio</a>
-    <a href="{{ site.url }}/portfolio" id="btPortfolio" class="bar-item button"><i class="fas fa-suitcase"></i> Portfolio</a>
-    <!--a href="#" class="bar-item button"><i class="fas fa-user"></i> Curriculum Vitae</a-->
-    <a href="{{ site.url }}/blog" id="btBlog" class="bar-item button"><i class="fas fa-terminal"></i> Blog</a>
-    <a href="{{ site.url }}/contact" id="btContact" class="bar-item button"><i class="fas fa-phone-alt"></i> Contacto</a>
-  </div>
+{% assign handle = page.lang %}
+{% case handle %}
+  {% when "es" %}
+    <div class="sidebar bar-block card sidebar-init sidebar-hide animate-right" id="mySidebar">
+      <button id="cbutton" class="bar-item button large" alt="Cerrar menú" title="Cerrar menú" accesskey="x">Cerrar <i class="far fa-times-circle"></i></button>
+      <a href="{{ site.url }}/es/" id="btHome" class="bar-item button" title="Inicio"><i class="fas fa-user"></i> Inicio</a>
+      <a href="{{ site.url }}/es/portfolio" id="btPortfolio" class="bar-item button" title="Portfolio"><i class="fas fa-suitcase"></i> Portfolio</a>
+      <a href="{{ site.url }}/es/blog" id="btBlog" class="bar-item button" title="Blog"><i class="fas fa-terminal"></i> Blog</a>
+      <a href="{{ site.url }}/es/contact" id="btContact" class="bar-item button" title="Contacto"><i class="fas fa-phone-alt"></i> Contacto</a>
+      <a href="{{ site.url }}/{{ page.slug }}" class="bar-item button" title="Ver en Ingles">{{site.data.navigation.languages[0].icon}} English</a>
+    </div>
+  {% else %}
+    <div class="sidebar bar-block card sidebar-init sidebar-hide animate-right" id="mySidebar">
+      <button id="cbutton" class="bar-item button large" alt="Close menu" title="Close menu" accesskey="x">Close <i class="far fa-times-circle"></i></button>
+      <a href="{{ site.url }}/" id="btHome" class="bar-item button" title="Home"><i class="fas fa-user"></i> Home</a>
+      <a href="{{ site.url }}/portfolio" id="btPortfolio" class="bar-item button" title="Portfolio"><i class="fas fa-suitcase"></i> Portfolio</a>
+      <a href="{{ site.url }}/blog" id="btBlog" class="bar-item button" title="Blog"><i class="fas fa-terminal"></i> Blog</a>
+      <a href="{{ site.url }}/contact" id="btContact" class="bar-item button" title="Contact"><i class="fas fa-phone-alt"></i> Contact</a>
+      <a href="{{ site.url }}/es/{{ page.slug }}" class="bar-item button" title="Read in Spanish">{{site.data.navigation.languages[1].icon}} Español</a>
+    </div>
+{% endcase %}
   <div class="burguer-bar">
-    <button id="bbutton" class="button xlarge"><i class="fas fa-bars"></i></button>
+    <button id="bbutton" class="button xlarge" alt="menu bars" role="menu" title="Menu" aria-label="menu" accesskey="z"><i class="fas fa-bars"></i></button>
   </div>
 </header>

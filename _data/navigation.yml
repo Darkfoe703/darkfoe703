@@ -1,0 +1,7 @@
+languages:
+  - language: en
+    label: English
+    icon: 🇺🇸
+  - language: es
+    label: Español
+    icon: 🇪🇸

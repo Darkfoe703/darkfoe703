@@ -3,9 +3,6 @@ _site
 .jekyll-metadata
 *-cache/
 
-### NPM ###
-/node_modules/
-
 ### Atom ###
 .ftpconfig
 .sftpconfig
