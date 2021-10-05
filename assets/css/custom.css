@@ -1,37 +1,39 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700');
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Rajdhani:wght@300;400;500;700&display=swap');
 /* ================= Colors =============== */
 :root {
-  --bg-main: rgba(61, 62, 66, 1);
+  --bg-main: rgba(48, 52, 54, 1);
   --bg-profile: rgba(255, 255, 255, 1);
-  --color-main: rgba(23, 162, 184, 1);
-  --font-main: rgba(144, 153, 160, 1);
-  --font-profile: rgba(128, 139, 147, 1);
-  --font-bold: rgba(74, 78, 81, 1);
+  --bg-profile-dark: rgba(19, 21, 22, 1);
+  --bg-bars: rgba(78, 80, 85, 1);
+  --color-main: rgba(81, 212, 233, 1);
+  --font-main: rgba(179, 179, 179, 1);
+  --font-main-titles: rgba(250, 250, 250, 1);
+  --font-profile: rgba(139, 149, 156, 1);
+  --font-bold: rgba(212, 218, 221, 1);
 }
 /* ======================================== */
+::selection {
+    background-color: #004daa !important;
+    color: #e8e6e3 !important;
+}
 *,
 *::after,
 *::before {
   box-sizing: border-box;
 }
-
 html,
 body {
   height: 100%;
 }
-
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
   line-height: 1.5em;
 }
-
 a {
   color: var(--color-main);
   text-decoration: none;
 }
-
 /*============= SIDEBAR =============*/
 .sidebar{
   height: calc(99%);
@@ -39,7 +41,8 @@ a {
   background-color: var(--color-main);
   position: fixed !important;
   overflow: auto;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 600;
   z-index: 12;
 }
 .sidebar-init {
@@ -53,7 +56,6 @@ a {
   display: block;
   position: relative;
 }
-
 .burguer-bar {
   display: block;
   background: none;
@@ -124,10 +126,9 @@ a {
   text-align: center;
   cursor: pointer;
   white-space: nowrap;
-  font-weight: lighter;
+  /* font-weight: lighter; */
   font-size: 1.5em;
 }
-
 /*===================================*/
 .content {
   margin: 2em auto;
@@ -141,11 +142,11 @@ a {
   }
 }
 .span-bar {
-  background-color: var(--bg-profile);
+  background-color: var(--bg-profile-dark);
 }
 .bold {
   color: var(--font-bold);
-  font-weight: 400;
+  font-weight: 700;
 }
 .resume-wrapper {
   position: relative;
@@ -156,7 +157,7 @@ a {
   min-height: 600px;
 }
 .profile {
-  background: var(--bg-profile);
+  background-color: var(--bg-profile-dark);
   flex: 35%;
   color: var(--font-profile);
   height: calc(100% - 25px);
@@ -176,7 +177,7 @@ a {
   font-size: 3em;
   text-align: left;
   font-family: "Rajdhani", sans-serif;
-  color: var(--font-bold);
+  color: var(--color-main);
   text-transform: uppercase;
   line-height: 1em;
   padding-top: 1.5em;
@@ -386,7 +387,7 @@ a {
   }
 }
 .experience .experience-title {
-  color: #FFF;
+  color: var(--font-main-titles);
   margin-bottom: 15px;
 }
 
@@ -436,7 +437,7 @@ a {
   content: "";
   width: 100%;
   height: 6px;
-  background: var(--font-bold);
+  background: var(--bg-bars);
   display: block;
   margin-top: 3px;
 }
@@ -608,8 +609,6 @@ a {
     width: 70%;
   }
 }
-.section-wrapper.languages {
-}
 .section-wrapper .lang-percentage {
   margin-bottom: 10px;
   position: relative;
@@ -618,7 +617,7 @@ a {
   content: "";
   width: 100%;
   height: 6px;
-  background: var(--font-bold);
+  background: var(--bg-bars);
   display: block;
   margin-top: 3px;
 }
@@ -630,19 +629,19 @@ a {
   margin-top: 3px;
   bottom: 0;
 }
-/*LANG ESPAÑOL*/
+/*LANG SPANISH*/
 .section-wrapper .lang-percentage:nth-child(1)::before {
   width: 100%;
   -webkit-animation: skill_1 0.6s ease;
           animation: skill_1 0.6s ease;
 }
-/*LANG INGLES*/
+/*LANG ENGLISH*/
 .section-wrapper .lang-percentage:nth-child(2)::before {
   width: 85%;
   -webkit-animation: skill_2 0.6s ease;
           animation: skill_2 0.6s ease;
 }
-/*LANG ITALIANO*/
+/*LANG ITALIAN*/
 .section-wrapper .lang-percentage:nth-child(3)::before {
   width: 60%;
   -webkit-animation: skill_3 0.6s ease;
@@ -730,6 +729,52 @@ a {
 .card-p .details button:hover {
   background: var(--color-main);
   color: #FFF;
+}
+/* =========== MODAL ============== */
+.btn{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: pink;
+  font-size: 20px;
+  color: white;
+  padding: 10px 30px;
+  cursor: pointer;
+}
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  visibility: hidden;
+}
+.modal-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: pink;
+  padding: 1rem 1.5rem;
+  width: 24rem;
+  border-radius: 0.5rem;
+}
+.close-button {
+  float: right;
+  width: 1.5rem;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  background-color: lightgray;
+}
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.0);
 }
 /* ============================================================
                       CONTACT

@@ -59,9 +59,10 @@ social:
     - https://www.instagram.com/darkfoe703
     - https://www.linkedin.com/in/marco-romero-at/
     - https://github.com/darkfoe703
+    - https://t.me/Darkfoe703
 
 include:
-  - en
+  - es
 # Exclude from processing.
 # The following items will not be processed, by default.
 # Any item listed under the `exclude:` key here will be automatically added to
@@ -72,6 +73,7 @@ include:
 #
 exclude:
   - README.md
+  - es/README_es.md
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/
