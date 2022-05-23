@@ -217,7 +217,6 @@ a {
 @media (max-width: 1500px) {
   .profile .picture-resume img {
     /*width: 80px;*/
-    width: 100%;
   }
 }
 @media (max-width: 1200px) {
