@@ -2,6 +2,7 @@
 _site
 .jekyll-metadata
 *-cache/
+Gemfile.lock
 
 ### Atom ###
 .ftpconfig
