@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Rajdhani:wght@300;400;500;700&display=swap');
 /* ================= Colors =============== */
 :root {
@@ -777,7 +778,7 @@ a {
   transform: scale(1.0);
 }
 /* ============================================================
-                   CARDS BLOG
+                  BLOG - CARDS
 ============================================================= */
 .card-b {
   display: flex;
@@ -836,6 +837,53 @@ a {
 
 .read-more-btn:hover {
   border: solid 1px var(--color-main);
+}
+/* ============================================================
+                  BLOG - POSTS
+============================================================= */
+.post-title{
+  color: var(--color-main);
+  text-align: center;
+  font-size: 3.5em;
+}
+p.post-meta{
+  text-align: center;
+  margin: 1em auto;
+}
+.post-content {
+  margin: auto;
+  max-width: 75%;
+  text-align: justify;
+}
+.post-content p {
+  margin-bottom: 1em;
+}
+
+code {
+  background-color: var(--bg-profile-dark)
+}
+figure.highlight{
+  border-radius: 4px;
+  background-color: var(--bg-profile-dark);
+  margin-left: 4em;
+  margin-right: 4em;
+  overflow: scroll;
+}
+
+.highlight{
+  padding: .5em .5em;
+  margin-bottom: 1em;
+  overflow: scroll;
+}
+.highlighter-rouge{
+  border-radius: 4px;
+  background-color: var(--bg-profile-dark);
+  margin-left: 4em;
+  margin-right: 4em;
+}
+.language-plaintext{
+  padding: 0px 5px;
+  margin: 0%;
 }
 /* ============================================================
                       CONTACT
