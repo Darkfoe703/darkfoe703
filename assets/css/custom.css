@@ -397,7 +397,7 @@ a {
 }
 @media (max-width: 850px) {
   .section-padding {
-    padding: 80px 10% 40px 10%;
+    padding: 80px 5% 40px 5%;
   }
 }
 @media (max-width: 450px) {
@@ -660,7 +660,7 @@ a {
   transition: .3s ease-out;
   height: max-content;
 }
-.card-p .card-img: {
+.card-p .card-img {
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -788,6 +788,12 @@ a {
   overflow: hidden;
   position: relative;
 }
+@media (max-width: 850px) {
+  .card-b {
+    max-height: 178px;
+  }
+}
+
 .card-b:hover {
   transition: 0.5s;
   transform: translateY(10px);
@@ -797,6 +803,11 @@ a {
 .card-b-img {
   max-width: 350px;
   max-height: 300px;
+}
+@media (max-width: 450px) {
+  .card-b-img {
+    display: none;
+  }
 }
 .card-b-details {
   flex: 1;
@@ -838,6 +849,7 @@ a {
 .read-more-btn:hover {
   border: solid 1px var(--color-main);
 }
+
 /* ============================================================
                   BLOG - POSTS
 ============================================================= */
@@ -854,6 +866,9 @@ p.post-meta{
   margin: auto;
   max-width: 75%;
   text-align: justify;
+}
+@media (max-width: 850px) {
+  
 }
 .post-content p {
   margin-bottom: 1em;
@@ -881,9 +896,47 @@ figure.highlight{
   margin-left: 4em;
   margin-right: 4em;
 }
+@media (max-width: 850px) {
+  .post-content {
+      max-width: 90%;
+  }
+  figure.highlight {
+      margin-left: 1em;
+      margin-right: 1em;
+  }
+  .highlighter-rouge {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+}
 .language-plaintext{
   padding: 0px 5px;
   margin: 0%;
+}
+
+.post-content img {
+  max-width: 100% !important;
+}
+@media (max-width: 450px) {
+  .post-title{
+    font-size: 2em;
+  }
+  p.post-meta{
+    font-size: .7em;
+  }
+  .post-content{
+    max-width: 100%;
+  }
+  figure.highlight {
+    margin-left: .2em;
+    margin-right: .2em;
+    font-size: .85em;
+  }
+  .highlighter-rouge {
+    margin-left: .2em;
+    margin-right: .2em;
+    font-size: .85em;
+  }
 }
 /* ============================================================
                       CONTACT
