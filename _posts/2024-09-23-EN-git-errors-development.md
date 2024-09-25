@@ -12,7 +12,7 @@ published: true
 ---
 [Spanish]({{ site.url }}/ES-git-errores-desarrollo) version
 
-![Git - Picture by Roman Synkevych on Unsplash](http://localhost:4000/assets/images/posts/roman-synkevych-wX2L8L-fGeA-unsplash.jpg)
+![Git - Picture by Roman Synkevych on Unsplash]({{ site.url }}/assets/images/posts/roman-synkevych-wX2L8L-fGeA-unsplash.jpg)
 > Picture by <a 
 > href="https://unsplash.com/es/@synkevych?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Roman Synkevych</a> on <a 
 > href="https://unsplash.com/es/fotos/pinguino-de-juguete-blanco-y-negro-wX2L8L-fGeA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>

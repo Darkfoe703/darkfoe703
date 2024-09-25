@@ -12,7 +12,7 @@ published: true
 ---
 Versión en [inglés]({{ site.url }}/EN-git-errors-development)
 
-![Git - Foto de Roman Synkevych en Unsplash](http://localhost:4000/assets/images/posts/roman-synkevych-wX2L8L-fGeA-unsplash.jpg)
+![Git - Foto de Roman Synkevych en Unsplash]({{ site.url }}/assets/images/posts/roman-synkevych-wX2L8L-fGeA-unsplash.jpg)
 > Foto de <a 
 > href="https://unsplash.com/es/@synkevych?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Roman Synkevych</a> en <a 
 > href="https://unsplash.com/es/fotos/pinguino-de-juguete-blanco-y-negro-wX2L8L-fGeA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
