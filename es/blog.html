@@ -9,10 +9,10 @@ lang: es
     <h3 class="post-list-heading experience-title">{{ page.list_title | default: "Posts" }}</h3>
 
     {%- for post in site.posts -%}
-    {%- if post.languaje == 'english' -%}
+    {%- if post.languaje == 'spanish' -%}
     <div class="card-b">
       <a class="post-link" href="{{ post.url | relative_url }}">
-        <img class="card-b-img" src="{{ base.url }}/{{ post.image }}" alt="Sol Negro Team Website">
+        <img class="card-b-img" src="{{ site.url }}/{{ post.image }}" alt="{{ post.image-alt }}">
         <div class="card-b-details">
           <h3 class="card-b-title">{{ post.title | escape }}</h3>
       </a>

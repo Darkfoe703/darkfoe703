@@ -5,7 +5,6 @@ title: Blog
 slug: blog
 lang: en
 ---
-
     <div class="flex-content">
       <section class="experience section-padding">
           <h3 class="post-list-heading experience-title">{{ page.list_title | default: "Posts" }}</h3>
@@ -14,7 +13,7 @@ lang: en
             {%- if post.languaje == 'english' -%}
               <div class="card-b">
                 <a class="post-link" href="{{ post.url | relative_url }}">
-                  <img class="card-b-img" src="{{ post.image }}" alt="Sol Negro Team Website">
+                  <img class="card-b-img" src="{{ site.url }}/{{ post.image }}" alt="{{ post.image-alt}}">
                   <div class="card-b-details">
                     <h3 class="card-b-title">{{ post.title | escape }}</h3>
                 </a>

@@ -1,21 +1,20 @@
 ---
 layout: post
-permalink: :title
+permalink: blog/:title
 highlighter: rouge
 title:  "Git: Cómo manejar errores de código en el desarrollo"
 date:   2024-09-23 20:00:00 -0300
 image: assets/images/posts/roman-synkevych-wX2L8L-fGeA-unsplash.jpg
+image-alt: "Git - Picture by Roman Synkevych"
 categories: git tips develop
 excerpt: "Seguramente hemos metido la pata en desarrollo ¿Puede git ayudarnos en ese caso?"
 languaje: spanish
 published: true
 ---
-Versión en [inglés]({{ site.url }}/EN-git-errors-development)
+[Versión en inglés]({{ site.url }}/blog/EN-git-errors-development)
 
 ![Git - Foto de Roman Synkevych en Unsplash]({{ site.url }}/assets/images/posts/roman-synkevych-wX2L8L-fGeA-unsplash.jpg)
-> Foto de <a 
-> href="https://unsplash.com/es/@synkevych?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Roman Synkevych</a> en <a 
-> href="https://unsplash.com/es/fotos/pinguino-de-juguete-blanco-y-negro-wX2L8L-fGeA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+> Foto de [Roman Synkevych](https://unsplash.com/es/@synkevych?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash) en [Unsplash](https://unsplash.com/es/fotos/pinguino-de-juguete-blanco-y-negro-wX2L8L-fGeA?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash)
 
 Cuando trabajamos en un entorno de desarrollo y producción, los errores son inevitables. Afortunadamente, Git es una herramienta esencial que nos permite manejar estos problemas de manera eficiente. Saber cómo revertir, corregir y desplegar de manera adecuada es vital para minimizar el tiempo de inactividad y asegurar la estabilidad del entorno de producción.
 

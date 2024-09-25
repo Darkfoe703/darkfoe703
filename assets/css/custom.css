@@ -787,6 +787,7 @@ a {
   margin-bottom: 1.2em;
   overflow: hidden;
   position: relative;
+  max-height: 220px;
 }
 @media (max-width: 850px) {
   .card-b {
@@ -857,6 +858,7 @@ a {
   color: var(--color-main);
   text-align: center;
   font-size: 3.5em;
+  line-height: normal;
 }
 p.post-meta{
   text-align: center;
@@ -873,7 +875,10 @@ p.post-meta{
 .post-content p {
   margin-bottom: 1em;
 }
-
+.post-content blockquote {
+  text-align: center;
+  font-style: italic;
+}
 code {
   background-color: var(--bg-profile-dark)
 }
@@ -914,8 +919,12 @@ figure.highlight{
   margin: 0%;
 }
 
-.post-content img {
+.post-content p img {
   max-width: 100% !important;
+  display: block;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
 }
 @media (max-width: 450px) {
   .post-title{
