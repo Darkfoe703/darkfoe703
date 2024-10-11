@@ -21,9 +21,9 @@
 title: Marco Romero
 author: Marco Antonio Romero
 email: marcoromero_1@hotmail.com
-tagline: Full Stack Developer and Teacher
+tagline: Backend Developer and Teacher
 description: >- # this means to ignore newlines until "baseurl:"
-  Full Stack Developer, with HTML5 CSS JavaScript Python y Django - FrontEnd y BackEnd.
+  Backend Developer, with Python, Django, Flask, PostgreSQL, Docker.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://marcoromero.com.ar" # the base hostname & protocol for your site, e.g. http://example.com
 # Localization
@@ -37,6 +37,14 @@ github_username: darkfoe703
 # Google Analytics code
 google_analytics: UA-61071534-1
 
+# skills:
+#   - python
+#   - flask
+#   - django
+#   - postgresql
+#   - docker
+#   - linux
+#   - API
 # Build settings
 theme: minima
 plugins:
