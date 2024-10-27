@@ -250,7 +250,7 @@ a {
   }
 }
 .contact-info {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 @media (max-width: 1200px) {
   .profile .contact-info {
@@ -326,7 +326,7 @@ a {
 }
 
 .contact-social {
-  margin: 6em auto 2em auto;
+  margin: 2.2em auto 2em auto;
   display: flex;
   justify-content: space-between;
 }
