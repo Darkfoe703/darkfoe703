@@ -1,0 +1,72 @@
+<html lang="en">
+
+<head>
+    <style>
+        /* Asegura que el HTML y el body ocupen toda la ventana */
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        /* Contenedor principal que organiza las secciones horizontalmente */
+        .page-content {
+            display: flex;
+            flex-direction: row;
+            /* Orienta las secciones de forma horizontal */
+            height: 100%;
+            /* Ocupa toda la altura de la ventana */
+        }
+
+        /* Sección fija */
+        .profile {
+            width: 300px;
+            /* Ancho fijo */
+            background-color: #f0f0f0;
+            /* Color de fondo para distinguirla */
+            padding: 10px;
+            box-sizing: border-box;
+            /* Asegura que el padding no desborde */
+        }
+
+        /* Sección desplazable */
+        .experience {
+            flex: 1;
+            /* Ocupa el espacio restante horizontalmente */
+            overflow-y: auto;
+            /* Habilita desplazamiento vertical */
+            background-color: #e0e0e0;
+            /* Color de fondo para distinguirla */
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        /* Simulación de contenido largo */
+        .experience-content {
+            height: 2000px;
+            /* Simula contenido desplazable */
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Header</h1>
+    </header>
+    <main class="page-content" aria-label="Content">
+        <!-- Sección fija -->
+        <section class="profile">
+            <p>Esta es la sección fija con un ancho de 300px.</p>
+        </section>
+
+        <!-- Sección desplazable -->
+        <section class="experience">
+            <div class="experience-content">
+                <p>Contenido de la sección desplazable (scrollable).</p>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
