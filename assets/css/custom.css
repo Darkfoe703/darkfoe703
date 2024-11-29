@@ -724,11 +724,65 @@ a {
   }
 }
 
+.skill-board {
+  display: grid;
+  gap: 50px 18px;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  justify-items: center;
+}
+.skill.nf {
+  color: var(--color-main);
+  font-size: 2.5em;
+  margin: auto 1em;
+}
+.skill-item {
+  -moz-box-align: center;
+  align-items: center;
+  background-color: var(--bg-profile-dark);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 120px;
+  position: relative;
+  width: 120px;
+  transition: 0.3s ease-in-out;
+}
+.skill-item:hover {
+  box-shadow: rgba(6, 6, 6, 0.25) 0px 14.3889px 28.7778px;
+  height: 125px;
+  width: 125px;
+}
+
+.skill-item p {
+  position: absolute;
+  top: 90px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
 .section-wrapper .lang-percentage {
   margin-bottom: 10px;
   position: relative;
 }
 
+.soft-skill-board {
+  display: inline-flex;
+  gap: 8px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.soft-skill {
+  border-radius: 6px;
+  background: var(--bg-profile-dark);
+  color: var(--color-main);
+  font-size: .8rem;
+  font-weight: 500;
+  padding: .2rem .6rem;
+  align-items: center;
+  display: flex;
+  gap: 4px;
+}
 .section-wrapper .lang-percentage::after {
   content: "";
   width: 100%;
