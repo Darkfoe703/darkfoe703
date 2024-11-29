@@ -1,59 +1,59 @@
 <!--Skill experience-->
-<h3 class="experience-title">Skills</h3>
-<div class="skill-board">
-    <div class="skill-item">
-        <i class="skill nf nf-dev-python"></i>
-        <p>Python</p>
-    </div>
-    <div class="skill-item">
-        <i class="skill nf nf-dev-django"></i>
-        <p>Django</p>
-    </div>
-    <div class="skill-item">
-        <i class="skill nf nf-dev-flask"></i>
-        <p>Flask</p>
-    </div>
-    <div class="skill-item">
-        <i class="skill nf nf-dev-sqldeveloper"></i>
-        <p>SQL</p>
-    </div>
-    <div class="skill-item">
-        <i class="skill nf nf-dev-postgresql"></i>
-        <p>PostgreSQL</p>
-    </div>
-    <div class="skill-item">
-        <i class="skill nf nf-dev-mysql"></i>
-        <p>MySQL</p>
-    </div>
-    <div class="skill-item">
-        <i class="skill nf nf-dev-git"></i>
-        <p>Git</p>
-    </div>
-    <div class="skill-item">
-        <i class="skill nf nf-dev-docker"></i>
-        <p>Docker</p>
-    </div>
-    <div class="skill-item">
-        <i class="skill nf nf-dev-aws"></i>
-        <p>AWS</p>
-    </div>
-    <div class="skill-item">
-        <i class="skill nf nf-dev-html5"></i>
-        <p>HTML</p>
-    </div>
-    <div class="skill-item">
-        <i class="skill nf nf-dev-css3"></i>
-        <p>CSS</p>
-    </div>
-    <div class="skill-item">
-        <i class="skill nf nf-dev-javascript"></i>
-        <p>JavaScript</p>
+<div id="skills" class="section-margin">
+    <h3 class="experience-title">Skills</h3>
+    <div class="skill-board">
+        <div class="skill-item">
+            <i class="skill nf nf-dev-python"></i>
+            <p>Python</p>
+        </div>
+        <div class="skill-item">
+            <i class="skill nf nf-dev-django"></i>
+            <p>Django</p>
+        </div>
+        <div class="skill-item">
+            <i class="skill nf nf-dev-flask"></i>
+            <p>Flask</p>
+        </div>
+        <div class="skill-item">
+            <i class="skill nf nf-dev-sqldeveloper"></i>
+            <p>SQL</p>
+        </div>
+        <div class="skill-item">
+            <i class="skill nf nf-dev-postgresql"></i>
+            <p>PostgreSQL</p>
+        </div>
+        <div class="skill-item">
+            <i class="skill nf nf-dev-mysql"></i>
+            <p>MySQL</p>
+        </div>
+        <div class="skill-item">
+            <i class="skill nf nf-dev-git"></i>
+            <p>Git</p>
+        </div>
+        <div class="skill-item">
+            <i class="skill nf nf-dev-docker"></i>
+            <p>Docker</p>
+        </div>
+        <div class="skill-item">
+            <i class="skill nf nf-dev-aws"></i>
+            <p>AWS</p>
+        </div>
+        <div class="skill-item">
+            <i class="skill nf nf-dev-html5"></i>
+            <p>HTML</p>
+        </div>
+        <div class="skill-item">
+            <i class="skill nf nf-dev-css3"></i>
+            <p>CSS</p>
+        </div>
+        <div class="skill-item">
+            <i class="skill nf nf-dev-javascript"></i>
+            <p>JavaScript</p>
+        </div>
     </div>
 </div>
-<h3 class="experience-title">Soft Skills</h3>
-<ul class="soft-skill-board">
-    <li class="soft-skill"><i class="nf nf-fa-people_carry_box"></i> Teamwork</li>
-    <li class="soft-skill"><i class="nf nf-md-tools"></i> Problem Solving</li>
-    <li class="soft-skill"><i class="nf nf-md-book_edit_outline"></i> Documentation</li>
-    <li class="soft-skill"><i class="nf nf-md-clipboard_check_outline"></i> Management of incidents</li>
-</ul>
+{%- if page.lang == "en" -%}
+    {%- include skill-soft.html -%}
+{%- else -%}
+    {%- include skill-soft_es.html -%}
+{%- endif -%}

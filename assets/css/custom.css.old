@@ -530,6 +530,200 @@ a {
   bottom: 0;
 }
 
+/*SKILL HTML*/
+.section-wrapper .skill-percentage:nth-child(1)::before {
+  width: 90%;
+  -webkit-animation: skill_1 0.6s ease;
+  animation: skill_1 0.6s ease;
+}
+
+/*SKILL CSS*/
+.section-wrapper .skill-percentage:nth-child(2)::before {
+  width: 85%;
+  -webkit-animation: skill_2 0.6s ease;
+  animation: skill_2 0.6s ease;
+}
+
+/*SKILL JS*/
+.section-wrapper .skill-percentage:nth-child(3)::before {
+  width: 50%;
+  -webkit-animation: skill_3 0.6s ease;
+  animation: skill_3 0.6s ease;
+}
+
+/*SKILL PYTHON*/
+.section-wrapper .skill-percentage:nth-child(4)::before {
+  width: 85%;
+  -webkit-animation: skill_4 0.6s ease;
+  animation: skill_4 0.6s ease;
+}
+
+/*SKILL DJANGO*/
+.section-wrapper .skill-percentage:nth-child(5)::before {
+  width: 70%;
+  -webkit-animation: skill_5 0.6s ease;
+  animation: skill_5 0.6s ease;
+}
+
+/*SKILL PHP*/
+.section-wrapper .skill-percentage:nth-child(6)::before {
+  width: 65%;
+  -webkit-animation: skill_6 0.6s ease;
+  animation: skill_6 0.6s ease;
+}
+
+.section-wrapper .skill-percentage:nth-child(7)::before {
+  width: 70%;
+  -webkit-animation: skill_6 0.6s ease;
+  animation: skill_6 0.6s ease;
+}
+
+/*SKILL HTML*/
+@-webkit-keyframes skill_1 {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 90%;
+  }
+}
+
+@keyframes skill_1 {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 90%;
+  }
+}
+
+/*SILL CSS*/
+@-webkit-keyframes skill_2 {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 85%;
+  }
+}
+
+@keyframes skill_2 {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 85%;
+  }
+}
+
+/*SKILL JS*/
+@-webkit-keyframes skill_3 {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 65%;
+  }
+}
+
+@keyframes skill_3 {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 65%;
+  }
+}
+
+/*SKILL PYTHON*/
+@-webkit-keyframes skill_4 {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 85%;
+  }
+}
+
+@keyframes skill_4 {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 85%;
+  }
+}
+
+/*SKILL DJANGO*/
+@-webkit-keyframes skill_5 {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 70%;
+  }
+}
+
+@keyframes skill_5 {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 70%;
+  }
+}
+
+/*SKILL PHP*/
+@-webkit-keyframes skill_6 {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 65%;
+  }
+}
+
+@keyframes skill_6 {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 65%;
+  }
+}
+
+@-webkit-keyframes skill_7 {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 70%;
+  }
+}
+
+@keyframes skill_7 {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 70%;
+  }
+}
+
 .skill-board {
   display: grid;
   gap: 50px 18px;
@@ -588,6 +782,44 @@ a {
   align-items: center;
   display: flex;
   gap: 4px;
+}
+.section-wrapper .lang-percentage::after {
+  content: "";
+  width: 100%;
+  height: 6px;
+  background: var(--bg-bars);
+  display: block;
+  margin-top: 3px;
+}
+
+.section-wrapper .lang-percentage::before {
+  content: "";
+  height: 6px;
+  background: var(--color-main);
+  position: absolute;
+  margin-top: 3px;
+  bottom: 0;
+}
+
+/*LANG SPANISH*/
+.section-wrapper .lang-percentage:nth-child(1)::before {
+  width: 100%;
+  -webkit-animation: skill_1 0.6s ease;
+  animation: skill_1 0.6s ease;
+}
+
+/*LANG ENGLISH*/
+.section-wrapper .lang-percentage:nth-child(2)::before {
+  width: 85%;
+  -webkit-animation: skill_2 0.6s ease;
+  animation: skill_2 0.6s ease;
+}
+
+/*LANG ITALIAN*/
+.section-wrapper .lang-percentage:nth-child(3)::before {
+  width: 60%;
+  -webkit-animation: skill_3 0.6s ease;
+  animation: skill_3 0.6s ease;
 }
 
 /* ============================================================
