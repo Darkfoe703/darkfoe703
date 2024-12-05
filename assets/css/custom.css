@@ -256,12 +256,6 @@ a {
   box-shadow: 2px 2px 12px 6px rgba(23, 162, 184, .7);
 }
 
-@media (max-width: 1500px) {
-  .profile .picture-resume img {
-    /*width: 80px;*/
-  }
-}
-
 @media (max-width: 1200px) {
   .profile .picture-resume img {
     width: 150px;
