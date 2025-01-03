@@ -922,6 +922,23 @@ figure.highlight {
   }
 }
 
+.libutton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 7px;
+  text-align: center;
+  outline: none;
+  text-decoration: none !important;
+  color: #000 !important;
+  width: 200px;
+  height: 32px;
+  border-radius: 16px;
+  background-color: var(--color-main);
+  font-family: "SF Pro Text", Helvetica, sans-serif;
+  margin: .5em auto;
+}
+
 /* ============================================================
                       CONTACT
 ============================================================= */
