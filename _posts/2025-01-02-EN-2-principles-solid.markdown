@@ -7,7 +7,7 @@ date: 2025-01-02 19:00:00 -0300
 image: assets/images/posts/solid-2.webp
 image-alt: "SOLID Principles OCP"
 categories: tips develop production practices SOLID OCP
-excerpt: "Principios SOLID: Open-Closed Principle (OCP). Parte 2"
+excerpt: "SOLID Principles: Open-Closed Principle (OCP). Part 2"
 languaje: english
 related: /blog/ES-2-principios-solid
 published: true
