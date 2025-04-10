@@ -23,7 +23,7 @@ author: Marco Antonio Romero
 email: marcoromero.dev@gmail.com
 tagline: Backend Developer and Teacher
 description: >- # this means to ignore newlines until "baseurl:"
-  Backend Developer, with Python, Django, Flask, PostgreSQL, Docker.
+  Backend Developer, Python, Django, Flask, PostgreSQL, Docker.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://marcoromero.com.ar" # the base hostname & protocol for your site, e.g. http://example.com
 # Localization
