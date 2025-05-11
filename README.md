@@ -46,7 +46,7 @@ I'm a back-end developer passionate about designing and building clean, scalable
 
 ### 📈 GitHub Stats
 
-[![GitHub Streak](https://streak-stats.demolab.com?user=Darkfoe703&theme=gotham&card_width=450&card_height=190)](https://git.io/streak-stats) ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Darkfoe703&gotham=tokyonight&layout=compact&hide=html,css&card_height=190)
+[![GitHub Streak](https://streak-stats.demolab.com?user=Darkfoe703&theme=gotham&card_width=450&card_height=190)](https://git.io/streak-stats) ![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=Darkfoe703&gotham&layout=compact&hide=html,css&card_height=190)
 ---
 
 ### 📫 Reach Me At
