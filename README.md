@@ -5,7 +5,7 @@
 <p align="center">
   <a href="mailto:marcoromero.dev@gmail.com">📬 Contact</a> •
   <a href="https://www.linkedin.com/in/marco-romero-at/">🔗 LinkedIn</a> •
-  <a href="https://github.com/Darkfoe703">💻 GitHub</a>
+  <a href="https://github.com/Darkfoe703">💻 GitHub</a> •
   <a href="https://marcoromero.com.ar">🌎 Website</a>
 </p>
 
