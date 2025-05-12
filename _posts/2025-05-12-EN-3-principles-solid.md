@@ -55,3 +55,4 @@ This way, all objects respond to the same method, but behave consistently withou
 The Liskov Substitution Principle helps us think more carefully about class hierarchies, be more honest with our abstractions, and above all, avoid cramming in behavior that doesn't belong. It’s one of those rules that, once you start applying it, helps you write cleaner, more understandable, and easier-to-maintain code. And if you’re building APIs for third parties, your classes better behave like they claim to!
 
 o/
+

@@ -56,3 +56,4 @@ Así, todos los objetos responden al mismo método, pero se comportan de forma c
 El principio de Liskov nos obliga a pensar mejor las jerarquías de clases, a ser más honestos con nuestras abstracciones y, sobre todo, a evitar meter con calzador comportamientos que en realidad no aplican. Es una de esas reglas que, cuando la empezás a aplicar, te ayuda a escribir código más limpio, entendible y fácil de mantener. Y si hacés APIs para terceros, ¡más vale que tus clases se comporten como prometen!
 
 o/
+
