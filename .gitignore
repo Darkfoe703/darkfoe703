@@ -3,6 +3,9 @@ _site
 .jekyll-metadata
 *-cache/
 Gemfile.lock
+.bundle/
+.vendor/
+.vscode
 
 ### Atom ###
 .ftpconfig
