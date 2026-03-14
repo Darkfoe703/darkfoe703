@@ -35,3 +35,5 @@ gem "jekyll-seo-tag", "~> 2.7"
 gem "webrick", "~> 1.7"
 
 gem 'rouge'
+
+gem "logger"
