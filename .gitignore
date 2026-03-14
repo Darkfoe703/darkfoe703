@@ -4,7 +4,7 @@ _site
 *-cache/
 Gemfile.lock
 .bundle/
-.vendor/
+vendor/
 .vscode
 
 ### Atom ###
