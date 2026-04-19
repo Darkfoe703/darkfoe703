@@ -30,27 +30,36 @@ Es la capacidad de dividir un programa en módulos más pequeños y manejables.
 
 ```python
 # Función
-def saludar():
-    print("Hola")
+def saludar(): # nombre de la función, sin parámetros
+    print("Hola") # cuerpo de la función
 
-saludar()
+saludar() # llamada a la función
 ```
 <br>
 
-## Parámetros
+## Parámetros y argumentos
 <br>
+Los parámetros son variables que se definen en la función y que reciben valores cuando se llama a la función.
+Los argumentos son los valores que se pasan a la función cuando se llama a la función.
 
 ```python
 # Función con parámetros
-def saludar(nombre):
+def saludar(nombre): # nombre es el parámetro
     print("Hola", nombre)
 
-saludar("Marco")
+saludar("Marco") # "Marco" es el argumento
 ```
 <br>
 
-## Return
+## Return y sus valores
 <br>
+
+La sentencia return tiene dos propósitos:
+
+1. Terminar la ejecución de la función
+2. Devolver un valor
+
+Si no se especifica un valor de retorno, la función devuelve None.
 
 ```python
 # Función con return
