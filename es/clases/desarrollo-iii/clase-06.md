@@ -3,6 +3,7 @@ layout: clase
 title: "Clase 06: Más sobre listas"
 excerpt: ""
 lang: es
+materia: "Desarrollo III"
 ---
 
 # Clase 06: OPeraciones con listas

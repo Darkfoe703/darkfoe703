@@ -3,6 +3,7 @@ layout: clase
 title: "Clase 10: Nuestro Primer Trabajo Práctico"
 excerpt: ""
 lang: es
+materia: "Desarrollo III"
 ---
 
 # Trabajo Práctico 1

@@ -3,6 +3,7 @@ layout: clase
 title: "Clase 02: Conversión de Tipos y Operadores"
 excerpt: ""
 lang: es
+materia: "Desarrollo III"
 ---
 
 # Apunte: Conversión de Tipos y Operadores en Python

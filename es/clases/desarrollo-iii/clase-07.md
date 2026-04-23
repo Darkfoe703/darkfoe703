@@ -3,6 +3,7 @@ layout: clase
 title: "Clase 07: Tuplas"
 excerpt: ""
 lang: es
+materia: "Desarrollo III"
 ---
 
 # Tuplas

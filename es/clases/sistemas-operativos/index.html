@@ -1,0 +1,30 @@
+---
+layout: default
+title: Sistemas Operativos
+slug: sistemas-operativos
+lang: es
+---
+<div class="flex-content">
+    <section class="experience section-padding">
+        <h3 class="post-list-heading experience-title">Clases de Sistemas Operativos</h3>
+
+        <div class="classes-list">
+            {% assign clases = site.pages | sort: "name" %}
+            {% for page in clases %}
+            {% if page.url contains '/es/clases/sistemas-operativos/' and page.url != '/es/clases/sistemas-operativos/'
+            %}
+            <div class="card-b" style="margin-bottom: 20px; padding: 15px; border: 1px solid #ccc; border-radius: 8px;">
+                <a class="post-link" href="{{ page.url | relative_url }}">
+                    <h3 class="card-b-title">{{ page.title | escape }}</h3>
+                </a>
+                {% if page.date %}
+                <p class="card-b-details-date">{{ page.date | date: "%B %d, %Y" }}</p>
+                {% endif %}
+                <p>{{ page.excerpt | strip_html | truncatewords: 30 }}</p>
+                <a href="{{ page.url }}" class="read-more-btn">Leer clase...</a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+</div>
