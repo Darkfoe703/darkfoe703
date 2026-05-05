@@ -40,26 +40,28 @@ print("La suma es: ", suma)
 <br>
 
 Se centra en el uso de funciones como bloques de construcción principales. Las funciones se consideran "objetos" de primera clase, lo que significa que pueden ser pasadas como argumentos a otras funciones, devueltas por funciones y asignadas a variables.
+- Se evita modificar variables innecesariamente
+- Se prioriza el uso de funciones que reciben datos y devuelven resultados
 <br>
 
 Ejemplo:
 ```python
-def sumar(nro1, nro2):
-    return nro1 + nro2
-
 def leer_numeros():
-    nro1 = int(input("Ingrese un numero: "))
-    nro2 = int(input("Ingrese otro numero: "))
-    return nro1, nro2
+    return int(input("Ingrese un número: ")), int(input("Ingrese otro número: "))
 
 
-nro1, nro2 = leer_numeros()
+def sumar(a, b):
+    return a + b
 
 
-resultado = sumar(nro1, nro2)
+def mostrar(resultado):
+    print("La suma es:", resultado)
 
 
-print("La suma es:", resultado)
+# Programa principal
+n1, n2 = leer_numeros()
+resultado = sumar(n1, n2)
+mostrar(resultado)
 
 
 # Este programa agrupa las instrucciones en funciones
@@ -92,5 +94,69 @@ print("La suma es: ", Suma(nro1, nro2).sumar())
 
 ``` 
 <br>
+
+# Actividades
+<br>
+
+## 1. Pasar de un paradigma a otro
+
+Analizar el siguiente programa y reescribirlo bajo el paradigma funcional:
+<br>
+
+```python
+def leer_alumno():
+    nombre = input("Nombre del alumno: ")
+    nota1 = float(input("Nota 1: "))
+    nota2 = float(input("Nota 2: "))
+    nota3 = float(input("Nota 3: "))
+
+    return {
+        "nombre": nombre,
+        "notas": [nota1, nota2, nota3]
+    }
+
+
+def calcular_promedio(notas):
+    return sum(notas) / len(notas)
+
+
+def evaluar(promedio):
+    if promedio >= 6:
+        return "Aprobado"
+    else:
+        return "Desaprobado"
+
+
+def procesar_alumno(alumno):
+    promedio = calcular_promedio(alumno["notas"])
+    estado = evaluar(promedio)
+
+    alumno["promedio"] = promedio
+    alumno["estado"] = estado
+
+
+def mostrar_alumno(alumno):
+    print("Nombre:", alumno["nombre"])
+    print("Notas:", alumno["notas"])
+    print("Promedio:", alumno["promedio"])
+    print("Estado:", alumno["estado"])
+    print("----------------------")
+
+
+# Programa principal
+alumnos = []
+
+cantidad = int(input("¿Cuántos alumnos desea cargar? "))
+
+for i in range(cantidad):
+    alumno = leer_alumno()
+    procesar_alumno(alumno)
+    alumnos.append(alumno)
+
+print("\n--- RESULTADOS ---")
+
+for alumno in alumnos:
+    mostrar_alumno(alumno)
+```
 
 
