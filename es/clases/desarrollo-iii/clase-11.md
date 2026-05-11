@@ -104,59 +104,41 @@ Analizar el siguiente programa y reescribirlo bajo el paradigma funcional:
 <br>
 
 ```python
-def leer_alumno():
-    nombre = input("Nombre del alumno: ")
-    nota1 = float(input("Nota 1: "))
-    nota2 = float(input("Nota 2: "))
-    nota3 = float(input("Nota 3: "))
-
-    return {
-        "nombre": nombre,
-        "notas": [nota1, nota2, nota3]
-    }
-
-
-def calcular_promedio(notas):
-    return sum(notas) / len(notas)
-
-
-def evaluar(promedio):
-    if promedio >= 6:
-        return "Aprobado"
-    else:
-        return "Desaprobado"
-
-
-def procesar_alumno(alumno):
-    promedio = calcular_promedio(alumno["notas"])
-    estado = evaluar(promedio)
-
-    alumno["promedio"] = promedio
-    alumno["estado"] = estado
-
-
-def mostrar_alumno(alumno):
-    print("Nombre:", alumno["nombre"])
-    print("Notas:", alumno["notas"])
-    print("Promedio:", alumno["promedio"])
-    print("Estado:", alumno["estado"])
-    print("----------------------")
-
-
-# Programa principal
 alumnos = []
 
 cantidad = int(input("¿Cuántos alumnos desea cargar? "))
 
 for i in range(cantidad):
-    alumno = leer_alumno()
-    procesar_alumno(alumno)
+    nombre = input("Nombre del alumno: ")
+
+    nota1 = float(input("Nota 1: "))
+    nota2 = float(input("Nota 2: "))
+    nota3 = float(input("Nota 3: "))
+
+    promedio = (nota1 + nota2 + nota3) / 3
+
+    if promedio >= 6:
+        estado = "Aprobado"
+    else:
+        estado = "Desaprobado"
+
+    alumno = {
+        "nombre": nombre,
+        "notas": [nota1, nota2, nota3],
+        "promedio": promedio,
+        "estado": estado
+    }
+
     alumnos.append(alumno)
 
 print("\n--- RESULTADOS ---")
 
 for alumno in alumnos:
-    mostrar_alumno(alumno)
+    print("Nombre:", alumno["nombre"])
+    print("Notas:", alumno["notas"])
+    print("Promedio:", alumno["promedio"])
+    print("Estado:", alumno["estado"])
+    print("----------------------")
 ```
 
 
