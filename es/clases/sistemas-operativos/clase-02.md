@@ -41,6 +41,7 @@ materia: "Sistemas Operativos"
 <br>
 
 # Actividad
+<br>
 
 ## Consigna:
 <br>
