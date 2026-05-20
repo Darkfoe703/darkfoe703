@@ -104,6 +104,7 @@ Crear un programa que:
 - Tenga una lista de estudiantes
 - Seleccione uno al azar
 - Muestre el resultado en pantalla
+
 <br>
 
 ## 2. Dado
@@ -113,6 +114,7 @@ Crear un programa que:
 
 - Simule el lanzamiento de un dado
 - Muestre el resultado en pantalla
+
 <br>
 
 ## 3. Investigue del módulo `math`
