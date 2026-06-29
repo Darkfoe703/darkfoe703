@@ -20,7 +20,6 @@ Un proceso es un programa en ejecución. Es decir, no es el programa en sí, sin
 
 ## Características
 
-<br>
 
 Los procesos tienen un estado de vida: los procesos pueden estar en distintos estados, como por ejemplo: "en espera", "en ejecución", "terminado", etc.
 También tienen un conjunto de propiedades que los identifican, como por ejemplo: su ID (PID), su estado actual, su prioridad, etc.
@@ -67,17 +66,20 @@ Linux utiliza un método heredado de Unix muy eficiente basado en dos llamadas p
 
 <br>
 
-    fork(): El Kernel no crea un proceso desde cero. Lo que hace es clonar exactamente el proceso que hizo la petición (el proceso "padre"). El nuevo proceso (el "hijo") hereda una copia idéntica de la memoria, variables y archivos abiertos.
+```bash
+fork(): El Kernel no crea un proceso desde cero. Lo que hace es clonar exactamente el proceso que hizo la petición (el proceso "padre"). El nuevo proceso (el "hijo") hereda una copia idéntica de la memoria, variables y archivos abiertos.
 
-    execve() (o sus variantes): Inmediatamente después del fork, el proceso hijo suele ejecutar esta llamada para reemplazar todo su contenido clonado por el nuevo programa que realmente se quiere ejecutar (por ejemplo, cargar el código de Discord o de la terminal).
-
+execve() (o sus variantes): Inmediatamente después del fork, el proceso hijo suele ejecutar esta llamada para reemplazar todo su contenido clonado por el nuevo programa que realmente se quiere ejecutar (por ejemplo, cargar el código de Discord o de la terminal).
+```
 <br>
 
 ### En Windows (Mecanismo de Creación Directa)
 
 Windows no clona procesos. Su Kernel utiliza una API directa y mucho más compleja:
 
-    CreateProcess(): Esta llamada al sistema le pide al Kernel que construya un proceso completamente nuevo desde cero. El Kernel crea un espacio de memoria vacío, genera las estructuras de control correspondientes, carga el archivo ejecutable (.exe) directamente del disco a la RAM y crea el primer hilo (thread) de ejecución para arrancar el programa.
+```bash
+CreateProcess(): Esta llamada al sistema le pide al Kernel que construya un proceso completamente nuevo desde cero. El Kernel crea un espacio de memoria vacío, genera las estructuras de control correspondientes, carga el archivo ejecutable (.exe) directamente del disco a la RAM y crea el primer hilo (thread) de ejecución para arrancar el programa.
+```
 
 ![Imagen tasklist](https://configserverfirewall.s3.us-west-2.amazonaws.com/images/windows/cmd/tasklist/tasklist-command.webp){: width="50%" height="auto"}
 
