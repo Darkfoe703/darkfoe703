@@ -7,8 +7,10 @@ materia: "Desarrollo III"
 ---
 
 # Los datos: el recurso más valioso de la informática
+<br>
 
 ## ¿Por qué son importantes los datos?
+<br>
 
 Vivimos en una sociedad donde casi todas las actividades generan datos.
 
@@ -28,9 +30,10 @@ Hoy en día, los datos son uno de los recursos más valiosos del mundo.
 
 Las empresas, los gobiernos, los hospitales, las escuelas y las universidades utilizan datos para tomar decisiones.
 
----
+
 
 # ¿Qué es un dato?
+<br>
 
 Un dato es un valor aislado que, por sí solo, tiene poco significado.
 
@@ -48,9 +51,10 @@ Cada uno de ellos representa un dato.
 
 Por separado no nos dicen demasiado.
 
----
+
 
 # ¿Qué es la información?
+<br>
 
 La información es el resultado de organizar y relacionar varios datos para que tengan significado.
 
@@ -67,9 +71,9 @@ Ahora esos datos permiten conocer algo sobre una persona.
 
 Los datos adquirieron contexto.
 
----
 
 # ¿Qué es el conocimiento?
+<br>
 
 El conocimiento surge cuando una persona interpreta la información y puede tomar decisiones.
 
@@ -100,9 +104,11 @@ Conocimiento:
 
 > Las ventas están creciendo y conviene aumentar la producción.
 
----
+
 
 # La pirámide DIKW
+
+<br>
 
 ```text
              Conocimiento
@@ -120,9 +126,9 @@ La información organiza esos datos.
 
 El conocimiento permite tomar decisiones.
 
----
 
 # ¿Qué hace un programa?
+<br>
 
 Un programa recibe datos, los procesa y genera información.
 
@@ -153,6 +159,7 @@ Promedio: 8
 
 
 # Ejemplos cotidianos
+<br>
 
 ## Hospital
 
@@ -171,7 +178,6 @@ Conocimiento:
 
 El médico determina el tratamiento.
 
----
 
 ## Banco
 
@@ -189,7 +195,6 @@ Conocimiento:
 
 El cliente puede administrar mejor su dinero.
 
----
 
 ## Escuela
 
