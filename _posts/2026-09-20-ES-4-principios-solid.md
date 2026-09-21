@@ -3,7 +3,7 @@ layout: post
 permalink: blog/:title
 highlighter: rouge
 title: "Principios SOLID en el Desarrollo de Software - 4 ISP"
-date: 2025-09-20 10:00:00 -0300
+date: 2026-09-20 10:00:00 -0300
 image: assets/images/posts/solid-4-isp.webp
 image-alt: "Principios SOLID ISP"
 categories: tips develop production practices SOLID ISP

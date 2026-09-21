@@ -3,7 +3,7 @@ layout: post
 permalink: blog/:title
 highlighter: rouge
 title: "SOLID Principles in Software Development - 5 DIP"
-date: 2025-09-28 10:00:00 -0300
+date: 2026-09-27 10:00:00 -0300
 image: assets/images/posts/solid-5-dip.webp
 image-alt: "SOLID Principles DIP"
 categories: tips develop production practices SOLID DIP
