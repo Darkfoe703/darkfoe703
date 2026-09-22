@@ -1,12 +1,12 @@
 ---
 layout: clase
-title: "Clase 20: POO - Polimorfismo, Encapsulamiento y Métodos Especiales"
+title: "Clase 20: POO - Polimorfismo y Encapsulamiento"
 excerpt: ""
 lang: es
 materia: "Desarrollo III"
 ---
 
-# Polimorfismo, Encapsulamiento y Métodos Especiales
+# Polimorfismo y Encapsulamiento
 
 <br>
 
@@ -15,10 +15,9 @@ materia: "Desarrollo III"
 En la **Clase 18** vimos: clases, objetos, atributos, métodos, `__init__` y `self`.
 En la **Clase 19** vimos: herencia, `super()`, sobrescritura, herencia múltiple.
 
-Hoy cerramos el módulo POO con tres conceptos que hacen a Python poderoso y profesional:
+Hoy cerramos el módulo POO con dos conceptos fundamentales:
 1. **Polimorfismo** — "Mismo mensaje, diferente comportamiento"
-2. **Encapsulamiento** — Proteger los datos internos
-3. **Métodos especiales** — `@property`, `@classmethod`, `@staticmethod`
+2. **Encapsulamiento** — Proteger los datos internos de la clase
 
 <br>
 
@@ -137,6 +136,12 @@ Usuario: Visitante
 
 > **Analogía**: El volante del auto. Tú giras el volante (interfaz pública), no manipulas la dirección hidráulica directamente (implementación privada).
 
+### ¿De qué (o quién) estamos protegiendo los datos?
+
+> **Protegemos los datos de la propia clase contra uso incorrecto DESDE AFUERA** (código externo que usa la clase).
+> 
+> El problema no es que la clase se rompa a sí misma, sino que **cualquier código externo** pueda hacer `cuenta.saldo = -5000` y dejar el objeto en estado inválido. El encapsulamiento pone un **guardián** en la puerta: nadie modifica los datos sin pasar validación.
+
 ### Convenciones en Python
 
 | Convención | Significado | Ejemplo |
@@ -145,7 +150,7 @@ Usuario: Visitante
 | `_protegido` | "Uso interno, no toques desde afuera" | `self._saldo` |
 | `__privado` | Name mangling (Python lo renombra) | `self.__clave` |
 
-> **Importante**: En Python **no hay privacidad real**. Las convenciones son acuerdos entre programadores. `__privado` solo dificulta el acceso accidental.
+> **Importante**: En Python **no hay privacidad real**. Las convenciones son acuerdos entre programadores. `_protegido` es un aviso: "esto es interno".
 
 ### El problema: acceso directo inseguro
 
@@ -153,65 +158,68 @@ Usuario: Visitante
 class CuentaBancaria:
     def __init__(self, titular, saldo=0):
         self.titular = titular
-        self.saldo = saldo  # ¡Público! Cualquiera puede hacer: cuenta.saldo = -9999
+        self.saldo = saldo  # ¡Público! Cualquier código externo puede hacer: cuenta.saldo = -9999
 
 cuenta = CuentaBancaria("Ana", 1000)
-cuenta.saldo = -5000  # 😱 ¡Saldo negativo sin control!
+cuenta.saldo = -5000  # 😱 ¡Saldo negativo sin control! El objeto queda en estado inválido.
 print(cuenta.saldo)   # -5000
 ```
 
-### La solución: `@property`
+**¿Quién hizo el daño?** Código externo que usó la clase sin saber (o importarle) las reglas del negocio.
 
-`@property` permite **controlar el acceso** a un atributo como si fuera lectura simple, pero ejecutando código detrás.
+### La solución: Métodos getter y setter (el guardián en la puerta)
+
+En lugar de dejar que toquen el atributo directamente, **exponemos métodos** que controlan el acceso:
 
 ```python
 class CuentaBancaria:
     def __init__(self, titular, saldo_inicial=0):
         self.titular = titular
-        self.__saldo = saldo_inicial  # Privado (name mangling)
+        self._saldo = saldo_inicial  # _protegido: convención "no toques desde afuera"
     
-    # ===== GETTER (lectura) =====
-    @property
-    def saldo(self):
-        return self.__saldo
+    # ===== GETTER: método para LEER el valor =====
+    def obtener_saldo(self):
+        """Cualquiera puede LEER el saldo usando este método."""
+        return self._saldo
     
-    # ===== SETTER (escritura controlada) =====
-    @saldo.setter
-    def saldo(self, valor):
+    # ===== SETTER: método para ESCRIBIR el valor (con validación) =====
+    def establecer_saldo(self, valor):
+        """Cualquiera que intente CAMBIAR el saldo pasa por acá PRIMERO."""
         if valor < 0:
             raise ValueError("El saldo no puede ser negativo")
-        self.__saldo = valor
+        self._saldo = valor
     
-    # ===== MÉTODOS DE NEGOCIO =====
+    # ===== MÉTODOS DE NEGOCIO (también validan) =====
     def depositar(self, monto):
         if monto <= 0:
             raise ValueError("El depósito debe ser positivo")
-        self.__saldo += monto
-        print(f"✅ Depósito de ${monto}. Saldo: ${self.__saldo}")
+        self._saldo += monto
+        print(f"✅ Depósito de ${monto}. Saldo: ${self._saldo}")
     
     def retirar(self, monto):
         if monto <= 0:
             raise ValueError("El retiro debe ser positivo")
-        if monto > self.__saldo:
+        if monto > self._saldo:
             raise ValueError("Fondos insuficientes")
-        self.__saldo -= monto
-        print(f"✅ Retiro de ${monto}. Saldo: ${self.__saldo}")
+        self._saldo -= monto
+        print(f"✅ Retiro de ${monto}. Saldo: ${self._saldo}")
 
 # Probemos:
 cuenta = CuentaBancaria("Ana", 1000)
 
-print(cuenta.saldo)      # 1000 — Lee via @property (getter)
-cuenta.depositar(500)    # ✅ Depósito de $500. Saldo: $1500
-cuenta.retirar(200)      # ✅ Retiro de $200. Saldo: $1300
+print(cuenta.obtener_saldo())      # 1000 — Lee via getter
+cuenta.establecer_saldo(500)       # ✅ Cambia a 500
+cuenta.depositar(200)              # ✅ Depósito de $200. Saldo: $700
+cuenta.retirar(100)                # ✅ Retiro de $100. Saldo: $600
 
-# Protección automática:
+# Protección automática contra código externo descuidado:
 try:
-    cuenta.saldo = -100  # 🚫 ValueError: El saldo no puede ser negativo
+    cuenta.establecer_saldo(-100)  # 🚫 ValueError: El saldo no puede ser negativo
 except ValueError as e:
     print(f"Error: {e}")
 
 try:
-    cuenta.retirar(5000)  # 🚫 ValueError: Fondos insuficientes
+    cuenta.retirar(5000)           # 🚫 ValueError: Fondos insuficientes
 except ValueError as e:
     print(f"Error: {e}")
 ```
@@ -219,164 +227,69 @@ except ValueError as e:
 **Salida:**
 ```
 1000
-✅ Depósito de $500. Saldo: $1500
-✅ Retiro de $200. Saldo: $1300
+✅ Depósito de $200. Saldo: $700
+✅ Retiro de $100. Saldo: $600
 Error: El saldo no puede ser negativo
 Error: Fondos insuficientes
 ```
 
-> **¿Por qué no usar solo métodos `get_saldo()` y `set_saldo()`?**
-> Con `@property` la sintaxis es natural: `cuenta.saldo` (lectura) y `cuenta.saldo = 100` (escritura). El código que usa la clase no cambia, pero tú ganas control.
+> **¿Por qué métodos y no acceso directo?**
+> Con métodos (`obtener_saldo()`, `establecer_saldo(valor)`) tú decides **qué es válido**. El código externo no cambia su forma de trabajar, pero tú ganas control total sobre los datos.
 
-### Encapsulamiento con `_protegido` (convención suave)
+### Encapsulamiento suave con `_protegido` (convención)
 
-A veces no necesitas `@property`, solo avisar "esto es interno":
+A veces no necesitas validación estricta, solo avisar "esto es interno, no toques desde afuera":
 
 ```python
 class Motor:
     def __init__(self):
-        self._temperatura = 20  # Protegido: uso interno
+        self._temperatura = 20  # Protegido: uso interno de la clase
         self._encendido = False
     
-    def encender(self):
+    def encender(self):        # Público: interfaz oficial
         self._encendido = True
-        self._calentar()
+        self._calentar()       # Interno: la clase se habla a sí misma
     
-    def _calentar(self):  # Método protegido
+    def _calentar(self):       # Protegido: avisa "uso interno"
         self._temperatura += 30
         print(f"🔥 Motor calentando... {self._temperatura}°C")
 
 motor = Motor()
-motor.encender()        # OK: método público
-# motor._calentar()    # ⚠️ Funciona, pero avisa: "uso interno"
+motor.encender()        # ✅ OK: uso correcto de la interfaz pública
+# motor._calentar()    # ⚠️ Funciona, pero rompes la convención: "uso interno"
 ```
 
 <br>
 
-## 3. Métodos especiales: `@classmethod` y `@staticmethod`
-
-### `@classmethod` — Métodos de clase
-
-Reciben la **clase** (`cls`) como primer argumento, no la instancia (`self`). Sirven para **constructores alternativos** (factory methods).
-
-```python
-class Estudiante:
-    def __init__(self, nombre, legajo, curso):
-        self.nombre = nombre
-        self.legajo = legajo
-        self.curso = curso
-    
-    # Constructor alternativo: crea desde string "Ana|L-001|6°A"
-    @classmethod
-    def desde_string(cls, data_string):
-        nombre, legajo, curso = data_string.split("|")
-        return cls(nombre, legajo, curso)  # cls = Estudiante
-    
-    # Constructor alternativo: crea desde diccionario (ej: JSON)
-    @classmethod
-    def desde_dict(cls, data):
-        return cls(data["nombre"], data["legajo"], data["curso"])
-
-# Uso normal:
-e1 = Estudiante("Ana", "L-001", "6°A")
-
-# Desde string (ej: archivo CSV):
-e2 = Estudiante.desde_string("Bruno|L-002|5°B")
-
-# Desde dict (ej: API JSON):
-data_json = {"nombre": "Carla", "legajo": "L-003", "curso": "6°A"}
-e3 = Estudiante.desde_dict(data_json)
-
-print(e1.nombre, e1.legajo)  # Ana L-001
-print(e2.nombre, e2.legajo)  # Bruno L-002
-print(e3.nombre, e3.legajo)  # Carla L-003
-```
-
-> **Ventaja**: La lógica de parsing queda **dentro de la clase**, no esparcida por el código.
-
-### `@staticmethod` — Métodos estáticos
-
-No reciben `self` ni `cls`. Son **funciones que pertenecen al namespace de la clase** por organización lógica.
-
-```python
-class Matematicas:
-    @staticmethod
-    def sumar(a, b):
-        return a + b
-    
-    @staticmethod
-    def es_par(n):
-        return n % 2 == 0
-
-class UtilidadesTexto:
-    @staticmethod
-    def capitalizar(texto):
-        return texto.strip().title()
-    
-    @staticmethod
-    def contar_palabras(texto):
-        return len(texto.split())
-
-# Uso SIN instanciar:
-print(Matematicas.sumar(5, 3))           # 8
-print(Matematicas.es_par(10))            # True
-print(UtilidadesTexto.capitalizar(" hola mundo "))  # "Hola Mundo"
-```
-
-**Cuándo usar cada uno:**
-
-| Tipo | Recibe | Úsalo cuando... |
-|------|--------|-----------------|
-| Instancia (`def metodo(self)`) | `self` | Necesita datos del objeto |
-| Clase (`@classmethod`) | `cls` | Crea instancias de forma alternativa |
-| Estático (`@staticmethod`) | Nada | Es utilidad relacionada, no necesita datos |
-
-<br>
-
-## 4. Un ejemplo que une todo: `Persona` mejorada
+## 3. Un ejemplo que une todo: `Persona` con encapsulamiento y polimorfismo
 
 ```python
 class Persona:
     def __init__(self, nombre, edad, email):
         self.nombre = nombre
         self._edad = edad          # Protegido
-        self.__email = email       # Privado
+        self._email = email        # Protegido
     
-    # ===== PROPERTIES =====
-    @property
-    def edad(self):
+    # ===== GETTERS y SETTERS: encapsulamiento con validación =====
+    def obtener_edad(self):
         return self._edad
     
-    @edad.setter
-    def edad(self, valor):
+    def establecer_edad(self, valor):
         if not 0 <= valor <= 120:
-            raise ValueError("Edad inválida")
+            raise ValueError("Edad inválida (0-120)")
         self._edad = valor
     
-    @property
-    def email(self):
-        return self.__email
+    def obtener_email(self):
+        return self._email
     
-    @email.setter
-    def email(self, valor):
-        if "@" not in valor:
+    def establecer_email(self, valor):
+        if "@" not in valor or "." not in valor.split("@")[1]:
             raise ValueError("Email inválido")
-        self.__email = valor
-    
-    # ===== CLASSMETHOD =====
-    @classmethod
-    def desde_csv(cls, linea_csv):
-        nombre, edad, email = linea_csv.strip().split(",")
-        return cls(nombre, int(edad), email)
-    
-    # ===== STATICMETHOD =====
-    @staticmethod
-    def validar_email(email):
-        return "@" in email and "." in email.split("@")[1]
+        self._email = valor
     
     # ===== POLIMORFISMO: método para sobrescribir =====
     def describir(self):
-        return f"{self.nombre}, {self.edad} años, {self.email}"
+        return f"{self.nombre}, {self.obtener_edad()} años, {self.obtener_email()}"
 
 
 class Estudiante(Persona):
@@ -384,7 +297,7 @@ class Estudiante(Persona):
         super().__init__(nombre, edad, email)
         self.legajo = legajo
     
-    def describir(self):  # Polimorfismo
+    def describir(self):  # Polimorfismo: misma firma, comportamiento distinto
         return f"🎓 {super().describir()} | Legajo: {self.legajo}"
 
 
@@ -402,23 +315,16 @@ class Profesor(Persona):
 est = Estudiante("Ana", 20, "ana@email.com", "L-001")
 prof = Profesor("Carlos", 45, "carlos@email.com", "EMP-001")
 
-# 2. Classmethod: desde CSV
-est2 = Estudiante.desde_csv("Bruno,19,bruno@email.com")
-prof2 = Profesor.desde_csv("Diana,38,diana@email.com,EMP-002")
-
-# 3. Staticmethod: validación sin instanciar
-print(Persona.validar_email("test@mail.com"))   # True
-print(Persona.validar_email("invalido"))        # False
-
-# 4. Polimorfismo: lista heterogénea
-personas = [est, prof, est2, prof2]
+# 2. Polimorfismo: lista heterogénea
+personas = [est, prof]
 for p in personas:
     print(p.describir())  # Cada uno su formato
 
-# 5. Encapsulamiento: control via properties
-est.edad = 21           # OK
-# est.edad = 200        # 🚫 ValueError
-print(f"Edad actualizada: {est.edad}")
+# 3. Encapsulamiento: control via getters/setters
+est.establecer_edad(21)           # ✅ OK: pasa validación
+# est.establecer_edad(200)        # 🚫 ValueError: Edad inválida
+# est.establecer_email("malo")    # 🚫 ValueError: Email inválido
+print(f"Edad actualizada: {est.obtener_edad()}")
 ```
 
 <br>
@@ -431,12 +337,8 @@ print(f"Edad actualizada: {est.edad}")
 ├─────────────────────────────────────────────────────────┤
 │  __init__(self, nombre, edad, email)                   │
 │                                                         │
-│  @property          → edad (getter/setter controlado)  │
-│  @property          → email (getter/setter controlado) │
-│                                                         │
-│  @classmethod       → desde_csv(linea)                 │
-│                                                         │
-│  @staticmethod      → validar_email(email)             │
+│  obtener_edad() / establecer_edad(valor)  → validado   │
+│  obtener_email() / establecer_email(valor) → validado  │
 │                                                         │
 │  def describir(self) → "Nombre, edad, email"           │
 └─────────────────────────────────────────────────────────┘
@@ -466,25 +368,17 @@ print(f"Edad actualizada: {est.edad}")
 
 <br>
 
-1. **Agregar `@property` a tu clase de la Clase 19**
+1. **Agregar getter/setter con validación a tu clase de la Clase 19**
 
-   Toma `AlumnoBecado` o `AlumnoIntercambio` y protege al menos un atributo sensible (ej: `promedio`, `tipo_beca`, `pais_origen`) con `@property` y setter que valide.
+   Toma `AlumnoBecado` o `AlumnoIntercambio` y protege al menos un atributo sensible (ej: `promedio`, `tipo_beca`, `pais_origen`) creando métodos `obtener_X()` y `establecer_X(valor)` que validen.
 
-2. **Crear un `@classmethod` constructor alternativo**
-
-   Agrega a `Usuario` (clase 19) un método `desde_dict(cls, data)` que cree una instancia desde un diccionario. Prueba con:
-   ```python
-   data = {"nombre": "Eva", "email": "eva@mail.com", "documento": "99887766"}
-   usuario = Usuario.desde_dict(data)
-   ```
-
-3. **Polimorfismo en acción: función genérica**
+2. **Polimorfismo en acción: función genérica**
 
    Escribe una función `mostrar_todos(usuarios)` que reciba una lista mixta de `Estudiante`, `Profesor` y `Admin` (clase 19) y llame a `mostrar_info()` en cada uno. Verifica que cada uno muestra su info específica.
 
-4. **Pregunta corta (responder en 2-3 líneas)**
+3. **Pregunta de reflexión (responder en 3-4 líneas)**
 
-   > ¿Cuál es la diferencia práctica entre `@classmethod` y `@staticmethod`? Dame un caso de uso real para cada uno.
+   > En la actividad 2 de la clase 19, creaste una lista con objetos de diferentes clases y llamaste a `mostrar_info()` en cada uno. ¿Qué concepto vimos hoy que explica por qué cada objeto mostró su información de forma distinta? Explica con tus palabras.
 
 <br>
 

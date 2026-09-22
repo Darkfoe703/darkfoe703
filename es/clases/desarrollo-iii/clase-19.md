@@ -311,9 +311,9 @@ pato.graznar() # Propio
    - `AlumnoBecado`: `tipo_beca` (completa/parcial), `requisitos_mantenimiento`
    - `AlumnoIntercambio`: `pais_origen`, `duracion_meses`, `idioma_nativo`
 
-2. **Probar polimorfismo básico**
+2. **Probar comportamiento de las subclases**
 
-   Crea una lista con 3 objetos: un `Alumno`, un `AlumnoBecado` y un `AlumnoIntercambio`. Recorre la lista y llama a `mostrar_info()` en cada uno. Observa cómo cada uno muestra su información específica.
+   Crea una lista con 3 objetos: un `Alumno`, un `AlumnoBecado` y un `AlumnoIntercambio`. Recorre la lista y llama a `mostrar_info()` en cada uno. Observa cómo cada uno muestra su información específica (el método se comporta diferente según el tipo de objeto).
 
 3. **Pregunta reflexiva (escribir en comentarios)**
 
